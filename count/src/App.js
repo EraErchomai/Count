@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+  const onClick = () => {
+    let n = Number(document.querySelector('.num').innerHTML)
+    if(n>-10) {
+      var a = n-1;
+    }
+    else return;
+    document.querySelector('.num').innerHTML=a
+  }
+  const onClick2 = () => {
+    let n = Number(document.querySelector('.num').innerHTML)
+    if(n<10) {
+      var b = n+1;
+    }
+    else return;
+    document.querySelector('.num').innerHTML=b
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className='min' onClick={onClick}>-</div>
+      <div className='num'>1</div>
+      <div className='plus' onClick={onClick2}>+</div>
     </div>
   );
 }
